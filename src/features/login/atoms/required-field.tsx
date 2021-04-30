@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ErrorText = styled.p`
   color: #e26f6f;
   font-size: 14px;
-  margin-top: 0;
+  margin: 0;
 `;
 
 export const RequiredField = () => {

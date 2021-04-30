@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const BtnEn = styled.input`
-  width: 640px;
   height: 60px;
   background-color: #4a67ff;
   color: #fff;
@@ -14,6 +13,15 @@ const BtnEn = styled.input`
 const BtnDisabled = styled(BtnEn)`
   background-color: #99a9ff;
 `;
-export const LoginButton = () => {
-  return <BtnEn type="submit" value="Войти" />;
+type props = {
+  disabled: boolean;
+};
+export const LoginButton: React.FC<props> = ({
+  disabled,
+}) => {
+  return disabled ? (
+    <BtnDisabled type="submit" disabled value="Войти" />
+  ) : (
+    <BtnEn type="submit" value="Войти" />
+  );
 };
